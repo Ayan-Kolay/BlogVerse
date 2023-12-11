@@ -10,7 +10,7 @@ function ForgetPassword() {
     const submit = (data) => {
         setError("")
         try {
-            const recovery = authService.forgetPassword(data,"http://127.0.0.1:5173/reset-password")
+            const recovery = authService.forgetPassword(data,"https://blog-verse-beta.vercel.app/reset-password")
             console.log(recovery);
         }
         catch(error) {
