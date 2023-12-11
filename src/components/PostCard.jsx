@@ -62,12 +62,12 @@ function PostCard({$id, title, featuredImage,content,$createdAt,field,time}) {
       {renderContent}
     </p>
     <div class="mt-4">
-      <span class="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
-        #Macbook
-      </span>
-      <span class="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
+       <span class="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
+        #{field}
+      </span> 
+      {/*<span class="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
         #Apple
-      </span>
+      </span> */}
       <span class="mb-2 mr-2 inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
         {time} min read
       </span>

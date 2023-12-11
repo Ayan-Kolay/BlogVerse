@@ -38,6 +38,9 @@ export default function Post() {
                 <div className="w-full flex justify-center mb-4 relative flex-col ">
                     <div className="flex items-center flex-wrap gap-3 py-3">
                         {/* <p>By {post.userName}</p> */}
+                        <span class=" inline-block rounded-full bg-gray-100 px-3 py-1 text-[10px] font-semibold text-gray-900">
+                            #{post.field}
+                        </span> 
                         <p>| {post.time} min read |</p>
                         {/* <p className="rounded-full bg-gray-600 p-2">{post.field}</p> */}
                     </div>

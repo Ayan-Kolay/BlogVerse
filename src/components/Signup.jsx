@@ -25,37 +25,41 @@ function Signup() {
             setError(error.message)
         }
     }
+    
 
   return (
-    <div className="flex items-center justify-center">
-            <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-            <div className="mb-2 flex justify-center">
-                    <span className="inline-block w-full max-w-[100px]">
-                        <Logo width="100%" />
-                    </span>
-                </div>
-                <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
-                <p className="mt-2 text-center text-base text-black/60">
-                    Already have an account?&nbsp;
-                    <Link
-                        to="/login"
-                        className="font-medium text-primary transition-all duration-200 hover:underline"
-                    >
-                        Sign In
-                    </Link>
-                </p>
-                {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+    
 
-                <form onSubmit={handleSubmit(create)}>
-                    <div className='space-y-5'>
-                        <Input
+<section>
+    <div className="grid grid-cols-1 lg:grid-cols-2">
+        <div className="flex items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
+          <div className="xl:mx-auto xl:w-full xl:max-w-sm 2xl:max-w-md">
+            <span className="inline-block w-full max-w-[100px]">
+                <Logo width="100%" />
+            </span>
+            <h2 className="text-3xl font-bold leading-tight text-black sm:text-4xl">Sign up</h2>
+            <p className="mt-2 text-sm text-gray-600">
+              Already have an account?{' '}
+                <Link
+                    to="/login"
+                    className="font-medium text-primary transition-all duration-200 hover:underline">
+                    Sign in
+                </Link>
+            </p>
+            {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+            <form  method="POST" className="mt-8" onSubmit={handleSubmit(create)} >
+              <div className="space-y-5">
+                <div>
+                  
+                  <div className="mt-2">
+                  <Input
                         label="Full Name: "
                         placeholder="Enter your full name"
                         {...register("name", {
                             required: true,
                         })}
                         />
-                        <Input
+                    <Input
                         label="Email: "
                         placeholder="Enter your email"
                         type="email"
@@ -65,24 +69,43 @@ function Signup() {
                                 matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                                 "Email address must be a valid address",
                             }
-                        })}
-                        />
-                        <Input
+                        })}/>
+                    <Input
                         label="Password: "
                         type="password"
                         placeholder="Enter your password"
                         {...register("password", {
-                            required: true,})}
-                        />
-                        <Button type="submit" className="w-full">
-                            Create Account
-                        </Button>
-                    </div>
-                </form>
-            </div>
+                            required: true,
+                        })}/>
+                    
+                    <Button
+                        type="submit"
+                        className="w-full">
+                        Sign in
+                    </Button>
+                </div>
+                </div>
+              </div>
+            </form>
+            <div className="mt-3 space-y-3">
 
-    </div>
-  )
+            </div>
+          </div>
+        </div>
+        <div className="h-full w-full">
+          <img
+            className="mx-auto h-full w-full rounded-md object-cover"
+            src="https://images.unsplash.com/photo-1630673245362-f69d2b93880e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            alt=""
+          />
+        </div>
+      </div>
+ </section>
+
+
+)
+
+
 }
 
 export default Signup
